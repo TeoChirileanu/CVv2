@@ -13,6 +13,20 @@ var document = Document.Create(container => {
          col.Item().Row(AddHeader);
          col.Item().PaddingTop(10).Text("Experience & Training").FontSize(18).Black().AlignCenter();
          col.Item().PaddingTop(10).Row(AddSummary);
+         col.Item().PaddingTop(20).Text("What do others say about me?").Bold().FontSize(18).AlignCenter();
+         col.Item().PaddingTop(10).Text(
+            "\"Teodor is a very valuable addition to our team. He demonstrated a exceptional" +
+            " depth of technical expertise and worked very efficiently and fast. " +
+            "He is a pleasure to work with, both professionally and personally. " +
+            "Looking forward to his continued growth and the positive impact he will " +
+            "undoubtedly have on Lykke’s projects.\"").Justify();
+         col.Item().PaddingTop(5).Text("Richard Olsen, Founder & CEO @ Lykke (Switzerland)").SemiBold().AlignRight();
+         col.Item().PaddingTop(15).Text(
+            "\"Teodor is a passionate young man, carrying the Carpathian profundity in his heart. " +
+            "His interests are widespread and go beyond his profession. As you say: passion does not " +
+            "spread thin - so great level of energy which he brings to each and every task " +
+            "he works on. Keep on going, Teo!\"").Justify();
+         col.Item().PaddingTop(5).Text("Wolfgang Platz, Founder & CTO @ Tricentis (Austria)").SemiBold().AlignRight();
       });
    });
 });
@@ -21,14 +35,16 @@ document.ShowInCompanion();
 return;
 
 void AddHeader(RowDescriptor row) {
-   row.ConstantItem(140).Image(@"C:\CV\src\assets\ai-profile.jpg");
+   var imageUrl = @"https://github.com/TeoChirileanu/CVv2/blob/master/ai-profile.jpeg?raw=true";
+   var imageBytes = new HttpClient().GetByteArrayAsync(imageUrl).GetAwaiter().GetResult();
+   row.ConstantItem(140).Image(imageBytes);
    
    row.RelativeItem().Column(col => {
       col.Item().Text("Abstract").Bold().FontSize(14).AlignCenter();
       col.Item().Text("Professional programmer with 10+ years in developing software solutions").AlignCenter();
                
       col.Item().PaddingTop(10).Text("About").FontSize(14).Bold().AlignCenter();
-      col.Item().PaddingHorizontal(10).Text("An A-list developer with hands-on expertise in crypto exchanges, " +
+      col.Item().PaddingHorizontal(10).Text("A-list developer with hands-on expertise in crypto exchanges, " +
                                             "financial services and energy distribution. Leveraging clean code, " +
                                             "simple design and responsible AI to improve time to market " +
                                             "and reduce operational costs.").Justify();
@@ -61,8 +77,8 @@ void AddSummary(RowDescriptor row) {
       col.Item().PaddingTop(5).Text(".NET Developer with Python and SQL @ Enedis (FR)").AlignCenter();
       
       col.Item().PaddingTop(10).Text("Other").Bold().FontSize(14).AlignCenter();
-      col.Item().PaddingTop(5).Text("Hardware Virtualization Tech Lead @ GlobalLogic (US)").AlignCenter();
-      col.Item().PaddingTop(5).Text("Accounting & CRM Team Lead @ Beenear (RO)").AlignCenter();
+      col.Item().PaddingTop(5).Text(".NET Tech Lead with Azure @ GlobalLogic (US)").AlignCenter();
+      col.Item().PaddingTop(5).Text(".NET Team Lead with Angular @ Beenear (RO)").AlignCenter();
       col.Item().PaddingTop(5).Text(".NET Developer with Angular and Azure @ Tricentis AT").AlignCenter();
       col.Item().PaddingTop(5).Text("Certified Scratch Trainer @ Cartea Daliei (RO)").AlignCenter();
    });
