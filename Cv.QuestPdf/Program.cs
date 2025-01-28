@@ -11,10 +11,16 @@ var document = Document.Create(container => {
 
         page.Content().Padding(10).Column(col => {
             col.Item().Row(AddHeader);
+            
             col.Item().PaddingTop(10).Text("Experience & Training").FontSize(18).Black().AlignCenter();
+            
             col.Item().PaddingTop(10).Row(AddSummary);
+            
             col.Item().PaddingTop(10).Text(".NET Developer @ Lykke : 07/24 - 12/24").FontSize(18).Bold().AlignCenter();
             col.Item().PaddingTop(10).Row(AddLykke);
+            
+            col.Item().PaddingTop(10).Text(".NET Developer @ ING Bank : 04/23 - 09/24").FontSize(18).Bold().AlignCenter();
+            col.Item().PaddingTop(10).Row(AddIng);
         });
     });
 });
@@ -159,6 +165,92 @@ void AddLykke(RowDescriptor row) {
                       " integration of Lykke’s existing C# infrastructure with new Python-based algorithms and machine" +
                       " learning models. This bridge is essential for upcoming projects focused on trading signal " +
                       "generation, risk analysis, and market prediction.");
+        });
+    });
+}
+
+void AddIng(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Visual Basic, SQL, Yaml, JavaScript");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, WCF, Arm Templates");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Grafana, Docker, K6, Azure DevOps");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Established in 1994, considered a leading global financial institution, ING Bank offers a" +
+                      " wide range of products and services to individuals, small and medium-sized enterprises, " +
+                      "and large corporations.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Within the BPM Core team at ING Bank Romania, I played a crucial role in developing and " +
+                      "maintaining the essential runtime platform that powered all internal enterprise applications. " +
+                      "This platform, built on an n-tier architecture and utilizing plug-n-play modules, supported a " +
+                      "diverse range of mission-critical business applications, including business lending, leads " +
+                      "management, business banking, and card issuing. The platform seamlessly integrated with various " +
+                      "frontend applications, such as FABO, NARC, and Homebank, through a robust and well-defined API. " +
+                      "Responsibilities encompassed collaborating with cross-functional teams to ensure the platform’s " +
+                      "stability, performance, and scalability, while actively supporting these business-critical " +
+                      "processes.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("User Session Statelessness: ").SemiBold().Italic();
+            text.Span("Successfully migrated user session storage from an in-memory model to Redis. This " +
+                      "significantly enhanced the fault tolerance and scalability of applications across the" +
+                      " entire machine cluster.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("L3 Production Support: ").SemiBold().Italic();
+            text.Span("Provided comprehensive L3 production support, acting as a liaison between business analysts," +
+                      " configurators, and external stakeholders. This involved troubleshooting complex issues, analyzing" +
+                      " logs, and communicating solutions effectively to all parties involved.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Enhanced Health Checks: ").SemiBold().Italic();
+            text.Span("Implemented and extended health checks to encompass all core service dependencies. This " +
+                      "included monitoring vital databases and external assemblies developed by other teams, ensuring " +
+                      "proactive identification and resolution of potential problems.");
+        });
+        
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Led the successful upgrade to .NET 8 ").SemiBold().Italic();
+            text.Span("across multiple enterprise applications. This upgrade resulted in measurable performance " +
+                      "improvements and ensured seamless compatibility with the latest Microsoft technologies.");
+        });
+        
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Sustainability Initiative: ").SemiBold().Italic();
+            text.Span("Championed the adoption of QR code-based business cards for front-office banking officers. ");
         });
     });
 }
