@@ -16,11 +16,17 @@ var document = Document.Create(container => {
             
             col.Item().PaddingTop(10).Row(AddSummary);
             
-            col.Item().PaddingTop(10).Text(".NET Developer @ Lykke : 07/24 - 12/24").FontSize(18).Bold().AlignCenter();
+            col.Item().PaddingTop(10).Text(".NET Developer @ Lykke (CH) : 07/24 - 12/24").FontSize(18).Bold().AlignCenter();
             col.Item().PaddingTop(10).Row(AddLykke);
             
-            col.Item().PaddingTop(10).Text(".NET Developer @ ING Bank : 04/23 - 09/24").FontSize(18).Bold().AlignCenter();
+            col.Item().PaddingTop(10).Text(".NET Developer @ ING Bank (RO) : 04/23 - 09/24").FontSize(18).Bold().AlignCenter();
             col.Item().PaddingTop(10).Row(AddIng);
+            
+            col.Item().PaddingTop(10).Text(".NET Developer @ American Express (US) : 04/23 - 09/24").FontSize(18).Bold().AlignCenter();
+            col.Item().PaddingTop(10).Row(AddAmex);
+            
+            col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 04/23 - 07/23").FontSize(18).Bold().AlignCenter();
+            col.Item().PaddingTop(10).Row(AddGlobalLogic);
         });
     });
 });
@@ -108,7 +114,7 @@ void AddLykke(RowDescriptor row) {
         col.Item().PaddingTop(5).Text(text => {
             text.AlignCenter();
             text.Span("Languages: ").Italic();
-            text.Span("C#, Python, SQL, Yaml");
+            text.Span("C#, Razor, Python, SQL, Yaml");
         });
         col.Item().PaddingTop(5).Text(text => {
             text.AlignCenter();
@@ -251,6 +257,163 @@ void AddIng(RowDescriptor row) {
             text.Justify();
             text.Span("Sustainability Initiative: ").SemiBold().Italic();
             text.Span("Championed the adoption of QR code-based business cards for front-office banking officers. ");
+        });
+    });
+}
+
+void AddAmex(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Visual Basic, Razor, Powershell, Cake");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Blazor, WCF");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Playwright, Bamboo, DataGrip, vATM, WebFT");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("A global integrated payments company, providing customers with access to products, insights, " +
+                      "and experiences that enrich lives and build business success, Amex offers a range of financial " +
+                      "products and services, including credit and charge cards, merchant acquisition and processing, " +
+                      "network services, travel, and insurance.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Contributed to the development and integration of key payment products such as WebFASTest, " +
+                      "vATM, and NGS (a payment certification tool). Leveraged expertise in C# on .NET, Razor on Blazor, " +
+                      "SQL databases, and Azure Cloud to ensure seamless functionality and integration of these products" +
+                      " within the existing payment infrastructure. This work involved extensive collaboration with " +
+                      "cross-functional teams and adherence to rigorous industry standards for payment processing and certification.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Introduced UI testing with Playwright: ").SemiBold().Italic();
+            text.Span("Implemented automated UI testing framework using Playwright in the absence of a dedicated " +
+                      "QA team, ensuring client acceptance criteria for payment certification scenarios were met and " +
+                      "reducing manual testing efforts.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Spearheaded the greenfield development of NGS: ").SemiBold().Italic();
+            text.Span("Led the development of the NGS payment certification tool using modern technologies like " +
+                      "Blazor, establishing a robust and flexible UI component system from scratch.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Streamlined deployment processes: ").SemiBold().Italic();
+            text.Span("Developed PowerShell and Cake scripts for automated building, packaging, and deployment of binaries.");
+        });
+        
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Provided support and maintenance for a legacy system: ").SemiBold().Italic();
+            text.Span("Ensured the continued functionality and stability of a critical legacy system, while also " +
+                      "documenting and extracting key information, such as EMV chip card application and tags, to make it" +
+                      " accessible throughout the modernized system.");
+        });
+        
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Mentored junior developers on best practices:: ").SemiBold().Italic();
+            text.Span("Shared expertise in test-driven development (TDD), clean code principles, and continuous integration.");
+        });
+    });
+}
+
+void AddGlobalLogic(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, SQL, Gherkin, C++");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Azure, TCP/IP");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Postman, Ingenico, Verifone, Moneris");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("GlobalLogic, a Hitachi Group Company, is a leader in digital product engineering. They help " +
+                      "clients design and build innovative products, platforms, and digital experiences for the modern " +
+                      "world. Combining experience design with complex engineering, they partner with clients across " +
+                      "various industries to accelerate their digital transformation and bring their visions to life.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Ensured 24/7 operational support for a US-based automated car wash business. Developed a " +
+                      "hardware virtualization system using C# on .NET and Azure Cloud, enabling automated nightly " +
+                      "builds for rigorous system testing. Integrated RESTful APIs and payment SDKs from Moneris, " +
+                      "Ingenico, and Verifone to ensure seamless operation of automated gates, car wash robots, " +
+                      "and unattended payment terminals.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Led the development of an abstracted, testable system: ").SemiBold().Italic();
+            text.Span("Coordinated a team to create a comprehensive virtualized environment simulating the entire " +
+                      "car wash operation.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Implemented clean code and test-driven development (TDD) practices: ").SemiBold().Italic();
+            text.Span("Ensured high-quality codebase, emphasizing maintainability, readability, and testability. " +
+                      "This approach facilitated decoupling hardware implementations from software abstractions, " +
+                      "resulting in a flexible and resilient system.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Introduced architectural patterns for enhanced maintainability: ").SemiBold().Italic();
+            text.Span("Employed dependency inversion and interface segregation principles to design a system " +
+                      "reliant on abstract interfaces, allowing for easy substitution of hardware components without " +
+                      "disrupting the overall system functionality.");
+        });
+        
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Provided regular updates and presentations to the US client: ").SemiBold().Italic();
+            text.Span("Maintained open communication with stakeholders, demonstrating project progress, achieved " +
+                      "milestones, and addressing any concerns.");
         });
     });
 }
