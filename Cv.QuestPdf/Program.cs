@@ -11,43 +11,62 @@ var document = Document.Create(container => {
 
         page.Content().Padding(10).Column(col => {
             col.Item().Row(AddHeader);
-            
+
             col.Item().PaddingTop(10).Text("Experience & Training").FontSize(18).Black().AlignCenter();
-            
             col.Item().PaddingTop(10).Row(AddSummary);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Lykke (CH) : 07/24 - 12/24").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text("What do other say about me?").FontSize(18).Black().AlignCenter();
+            col.Item().PaddingTop(10).Row(AddRecommendations);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Lykke (CH) : 07/24 - 12/24").FontSize(18).Bold()
+                .AlignCenter();
             col.Item().PaddingTop(10).Row(AddLykke);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ ING Bank (RO) : 04/23 - 09/24").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ ING Bank (RO) : 04/23 - 09/24").FontSize(18).Bold()
+                .AlignCenter();
             col.Item().PaddingTop(10).Row(AddIng);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ American Express (US) : 03/23 - 07/24").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ American Express (US) : 03/23 - 07/24").FontSize(18).Bold()
+                .AlignCenter();
             col.Item().PaddingTop(10).Row(AddAmex);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 03/23 - 06/23").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 03/23 - 06/23").FontSize(18).Bold()
+                .AlignCenter();
             col.Item().PaddingTop(10).Row(AddGlobalLogic);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 02/25").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 02/25").FontSize(18).Bold()
+                .AlignCenter();
             col.Item().PaddingTop(10).Row(AddItineris);
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Klips (IL) : 08/22 - 03/23").FontSize(18).Bold().AlignCenter();
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Axa IM (FR) : 07/22 - 02/23").FontSize(18).Bold().AlignCenter();
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ BeeNear (RO) : 05/21 - 05/22").FontSize(18).Bold().AlignCenter();
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Enedis (FR) : 02/19 - 02/21").FontSize(18).Bold().AlignCenter();
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Societe Generale (FR) : 06/18 - 01/19").FontSize(18).Bold().AlignCenter();
-            
-            col.Item().PaddingTop(10).Text(".NET Developer @ Tricentis (AT) : 12/17 - 05/18").FontSize(18).Bold().AlignCenter();
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Klips (IL) : 08/22 - 03/23").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddKlips);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Axa IM (FR) : 07/22 - 02/23").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddAxa);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ BeeNear (RO) : 05/21 - 05/22").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddBeeNear);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Enedis (FR) : 02/19 - 02/21").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddEnedis);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Societe Generale (FR) : 06/18 - 01/19").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddSocGen);
+
+            col.Item().PaddingTop(10).Text(".NET Developer @ Tricentis (AT) : 12/17 - 05/18").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddTricentis);
         });
     });
 });
 
-document.ShowInCompanion();
-// document.GeneratePdf(@"C:\CV\CV.pdf");
+// document.ShowInCompanion();
+document.GeneratePdf(@"C:\CV\CV.pdf");
 return;
 
 void AddHeader(RowDescriptor row) {
@@ -64,12 +83,16 @@ void AddHeader(RowDescriptor row) {
                                               "and reduce operational costs.").Justify();
 
         col.Item().PaddingTop(10).Text("Skills").FontSize(14).Bold().AlignCenter();
-        col.Item().Text(".NET, Azure, AWS, Blazor, Angular, Python, SQL, Docker, K8s, Redis, PS, VB").AlignCenter();
+        col.Item().Text(".NET, Azure, AWS, Blazor, Angular, Python, SQL, Docker, K8s, Redis, PS, VB, GCP")
+            .AlignCenter();
 
         col.Item().PaddingTop(10).Text("Contact").FontSize(14).Bold().AlignCenter();
         col.Item().PaddingHorizontal(45).Row(r => {
-            r.RelativeItem().Text("\ud83d\udce7 teodorchirileanu@gmail.com").AlignCenter();
-            r.RelativeItem().Text("\ud83d\udcde +40 748 333 619").AlignCenter();
+            r.RelativeItem().Hyperlink("mailto:teodorchirileanu@gmail.com").Text("\ud83d\udce7 Email").AlignCenter();
+            r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("\ud83d\ude80 GitHub").AlignCenter();
+            r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("\ud83d\udcbc LinkedIn")
+                .AlignCenter();
+            r.RelativeItem().Hyperlink("tel:+40748333619").Text("\ud83d\udcde Phone").AlignCenter();
         });
     });
 }
@@ -118,6 +141,47 @@ void AddSummary(RowDescriptor row) {
                                       "Clean Code & Architecture, Refactoring, DDD," +
                                       " Design Patterns, The Pragmatic Programmer, Soft Skills, " +
                                       "Concurrency in C#, The Art of Unit Testing ").AlignCenter();
+    });
+}
+
+void AddRecommendations(RowDescriptor row) {
+    row.RelativeItem().Column(col => {
+        col.Item().Row(r => {
+            r.ConstantItem(20).Text("“")
+                .FontColor(Colors.Brown.Medium)
+                .FontSize(30);
+
+            r.RelativeItem().Text("Teodor is a very valuable addition to our team. " +
+                                  "He demonstrated a exceptional depth of technical expertise " +
+                                  "and worked very efficiently and fast. He is a pleasure to " +
+                                  "work with, both professionally and personally. " +
+                                  "Looking forward to his continued growth and the " +
+                                  "positive impact he will undoubtedly have on Lykke’s projects.").Justify().Italic();
+        });
+        col.Item().Text("— Richard Olsen, CEO @ Lykke").AlignRight().Italic().SemiBold();
+        
+        col.Item().PaddingTop(15).Row(r => {
+            r.ConstantItem(20).Text("“")
+                .FontColor(Colors.Brown.Medium)
+                .FontSize(30);
+
+            r.RelativeItem().Text("Teodor is a passionate young man, carrying the Carpathian profundity in his heart. " +
+                                  "His interests are wide spread and go beyond his profession. As you say: passion does " +
+                                  "not spread thin - so great level of energy which he brings to each and every task he " +
+                                  "works on. Keep on going, Teo!").Justify().Italic();
+        });
+        col.Item().Text("— Wolfgang Platz, Founder @ Tricentis").AlignRight().Italic().SemiBold();
+        
+        col.Item().PaddingTop(15).Row(r => {
+            r.ConstantItem(20).Text("“")
+                .FontColor(Colors.Brown.Medium)
+                .FontSize(30);
+
+            r.RelativeItem().Text("Teo has a warm, approachable demeanor and consistently demonstrates an exceptional " +
+                                  "level of dedication to his work. He creates a supportive environment for those around " +
+                                  "him, and he’s always willing to go the extra mile to achieve success.").Justify().Italic();
+        });
+        col.Item().Text("— Gernot Brandl, Director of Product Management @ UIPath").AlignRight().Italic().SemiBold();
     });
 }
 
@@ -260,14 +324,14 @@ void AddIng(RowDescriptor row) {
                       "included monitoring vital databases and external assemblies developed by other teams, ensuring " +
                       "proactive identification and resolution of potential problems.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Led the successful upgrade to .NET 8 ").SemiBold().Italic();
             text.Span("across multiple enterprise applications. This upgrade resulted in measurable performance " +
                       "improvements and ensured seamless compatibility with the latest Microsoft technologies.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Sustainability Initiative: ").SemiBold().Italic();
@@ -338,9 +402,10 @@ void AddAmex(RowDescriptor row) {
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Streamlined deployment processes: ").SemiBold().Italic();
-            text.Span("Developed PowerShell and Cake scripts for automated building, packaging, and deployment of binaries.");
+            text.Span(
+                "Developed PowerShell and Cake scripts for automated building, packaging, and deployment of binaries.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Provided support and maintenance for a legacy system: ").SemiBold().Italic();
@@ -348,11 +413,12 @@ void AddAmex(RowDescriptor row) {
                       "documenting and extracting key information, such as EMV chip card application and tags, to make it" +
                       " accessible throughout the modernized system.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Mentored junior developers on best practices:: ").SemiBold().Italic();
-            text.Span("Shared expertise in test-driven development (TDD), clean code principles, and continuous integration.");
+            text.Span(
+                "Shared expertise in test-driven development (TDD), clean code principles, and continuous integration.");
         });
     });
 }
@@ -423,7 +489,7 @@ void AddGlobalLogic(RowDescriptor row) {
                       "reliant on abstract interfaces, allowing for easy substitution of hardware components without " +
                       "disrupting the overall system functionality.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Provided regular updates and presentations to the US client: ").SemiBold().Italic();
@@ -498,18 +564,457 @@ void AddItineris(RowDescriptor row) {
             text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
                       "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Modernized Azure Infrastructure: ").SemiBold().Italic();
             text.Span("Led the migration of Azure Functions to .NET 8 and ASEv3, improving performance, security, " +
                       "and scalability of the platform.");
         });
-        
+
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Developed D365 F&O Data Entity Management Tool: ").SemiBold().Italic();
-            text.Span("Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
+            text.Span(
+                "Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
+        });
+    });
+}
+
+void AddKlips(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Powershell, SQL, JavaScript");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, GCP, React, SignalR");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Redis, NATS, Docker, Kubernetes, MongoDB, Grafana, Prometheus");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Klips is a fast-growing fintech company revolutionizing the financial industry with its " +
+                      "next-generation Financial Hub. This unified platform offers a comprehensive suite of services " +
+                      "including CFD trading, digital banking, shares dealing, payments, and CRM.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Together with the team we created an MVP for a cryptocurrency wallet using a modern " +
+                      "technology stack including .NET, SignalR, NATS, Redis, React and NoSQL databases. This platform " +
+                      "integrated with multiple liquidity providers, enabling essential features like deposits, swaps, " +
+                      "and withdrawals.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("MVP Delivery & Business Validation: ").SemiBold().Italic();
+            text.Span("Participated in the creation of a minimum viable product (MVP) for a cryptocurrency wallet, " +
+                      "validating core business ideas like fiat and crypto deposits, swaps, and withdrawals.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Real-Time Monitoring & Alerting: ").SemiBold().Italic();
+            text.Span("Implemented comprehensive Grafana dashboards to monitor critical system metrics, enabling " +
+                      "proactive issue detection and resolution by triggering automated alerts.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Sub-Millisecond Communication Architecture: ").SemiBold().Italic();
+            text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
+                      "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Real-Time Crypto Quotations via WebSockets: ").SemiBold().Italic();
+            text.Span("Implemented WebSocket technology to deliver live crypto quotations directly to the mobile " +
+                      "wallet page, enhancing user experience and enabling real-time decision-making.");
+        });
+    });
+}
+
+void AddAxa(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, TypeScript, SQL, JavaScript");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Angular, Cypress");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, SSMS, WebStorm, SimCorp Dimension, UFT One");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("As the investment arm of AXA Group, a world leader in financial protection and wealth " +
+                      "management, AXA IM is committed to responsible investing, integrating environmental, social, " +
+                      "and governance factors into its investment processes.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("The technical environment consists of a mix of .NET and Angular technologies, with a focus " +
+                      "on delivering a responsive, scalable, and secure platform for managing derivatives investments. " +
+                      "The platform leverages the SimCorp Dimension system for core portfolio management functionality " +
+                      "and utilizes SQL for efficient data operations.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Derivatives Pricing Innovation: ").SemiBold().Italic();
+            text.Span("Spearheaded the implementation, creation, and extension of a new derivatives credit pricing " +
+                      "system, complete with all necessary financial models.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Trader Empowerment Through Automation: ").SemiBold().Italic();
+            text.Span("Delivered mission-critical information about currency & index options directly to traders, " +
+                      "enabling automated execution of full unwinds and roll forwards, reducing manual labor by a factor of 10.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Legacy System Decommissioning: ").SemiBold().Italic();
+            text.Span("Successfully decommissioned approximately 20% of Global One, a company-wide legacy system " +
+                      "responsible for repurchase agreement management.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Automated Functional Testing Implementation: ").SemiBold().Italic();
+            text.Span("Developed a comprehensive suite of automated functional tests using UFT One, covering " +
+                      "critical business processes and reducing manual testing efforts by approximately 80%.");
+        });
+    });
+}
+
+void AddBeeNear(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, TypeScript, SQL, JavaScript");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET MVC, Angular, WebForms");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Visual Studio, SSMS, DataGrip, Autofac, Moq");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("OpenFinance is Italy’s leading accounting software, empowering businesses to streamline " +
+                      "financial operations & make informed decisions. EasyOne is an industry-leading CRM solution " +
+                      "widely used across the Iberian peninsula, enabling businesses to build stronger customer relationships.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("OpenFinance leverages a modern frameworks to deliver a responsive, scalable, and secure " +
+                      "accounting platform. EasyOne is built on a solid GUI core and has been strategically refactored " +
+                      "into a microservices architecture, enhancing its flexibility & maintainability.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("OpenGate Modernization: ").SemiBold().Italic();
+            text.Span("Led the successful migration of the legacy OpenGate accounting software from Microsoft " +
+                      "WebForms to Angular 12, significantly improving performance and modernizing the technology stack.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Threefold Performance Increase: ").SemiBold().Italic();
+            text.Span("Enhanced OpenGate’s performance by rewriting two critical components in Angular, resulting " +
+                      "in a markedly faster and more responsive user experience.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("CRM Refactoring to Microservices: ").SemiBold().Italic();
+            text.Span("Spearheaded the transformation of EasyOneCrm from a monolithic WPF application into a " +
+                      "microservices architecture, boosting scalability, flexibility, and maintainability.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("7x Faster Login: ").SemiBold().Italic();
+            text.Span("Achieved a sevenfold reduction in login loading time through innovative architectural " +
+                      "redesign, dramatically improving user access and satisfaction.");
+        });
+    });
+}
+
+void AddEnedis(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Python, Mermaid, DPL, C++");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, Parsimonious, WCF, WPF");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, yEd, GoXAM, PyCharm, PowerFactory");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Enedis Talon is a powerful internal tool designed to optimize the management of France’s " +
+                      "electrical grid. It empowers Enedis to efficiently calculate crucial electro-technical metrics, " +
+                      "including the cost of new connections for customers.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Enedis Talon is an N-Tier application framework that leverages advanced algorithms to " +
+                      "compute a range of electro-technical metrics for the French electrical grid. Key functionalities " +
+                      "include calculating the cost of new connections (raccordements) for end users, providing Enedis " +
+                      "with accurate cost estimations.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Base Tier Rework: ").SemiBold().Italic();
+            text.Span("Led the successful migration of the legacy OpenGate accounting software from Microsoft " +
+                      "WebForms to Angular 12, significantly improving performance and modernizing the technology stack.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("GUI Development for Workflow Generation: ").SemiBold().Italic();
+            text.Span("Designed and implemented a user-friendly GUI using WPF and GoXam, simplifying the process of " +
+                      "creating and visualizing complex electrical workflows for non-technical users.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Code Generation Pipeline: ").SemiBold().Italic();
+            text.Span("Created an innovative code generation pipeline capable of translating functional " +
+                      "specifications directly into C# code, drastically accelerating development cycles.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Supervisor Development: ").SemiBold().Italic();
+            text.Span("Built a sophisticated Supervisor module to autonomously monitor, deploy, and " +
+                      "configure Talon modules, ensuring optimal system health.");
+        });
+    });
+}
+
+void AddSocGen(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Powershell, Gherkin, SQL");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ADO, ASP .NET, SSIS");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Visual Studio, SSMS, TeamCity, XL Deploy");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Liqor is a cutting-edge solution designed to streamline liquidity reporting for financial " +
+                      "institutions. By automating the calculation of complex metrics and generating compliant reports " +
+                      "for the BDF and BCE, Liqor significantly reduces the time and resources traditionally required for these tasks.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("Liqor is an internal financial application developed to automate liquidity reporting. It " +
+                      "utilizes a sophisticated algorithm to calculate various liquidity metrics based on real-time " +
+                      "financial data. The application also features a report generation module capable of producing " +
+                      "customized reports in accordance with BDF and BCE requirements.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Basel III Implementation: ").SemiBold().Italic();
+            text.Span("Successfully integrated new liquidity metrics required by Basel III regulations, " +
+                      "ensuring compliance and contributing to accurate risk assessment.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("SSIS Script Optimization: ").SemiBold().Italic();
+            text.Span("Rewrote and optimized critical SSIS scripts, achieving a 35% performance improvement " +
+                      "and reducing processing time.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("XML Parser Development: ").SemiBold().Italic();
+            text.Span("Developed a custom XML parser that reduced data integration time for a new data source by " +
+                      "threefold, accelerating development cycles.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("CI Pipeline Redesign: ").SemiBold().Italic();
+            text.Span("Redesigned and upgraded the CI pipeline from TeamCity 2008 to 2018, resulting in a near " +
+                      "tenfold performance improvement and streamlined deployment processes.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Production Monitoring: ").SemiBold().Italic();
+            text.Span("Ensured stability and performance of Liqor’s production environment.");
+        });
+    });
+}
+
+void AddTricentis(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, TypeScript, SQL");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, Angular, Entity Framework, ASP .NET");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Visual Studio, Robo 3T, Azure DevOps, Auth0");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Tricentis Tosca empowers businesses to achieve faster, higher quality software releases at a " +
+                      "lower cost. Its codeless approach and AI-powered risk-based testing streamline the testing process, " +
+                      "increasing efficiency and reducing time-to-market.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span(
+                "Tricentis Tosca’s model-based test automation and broad technology support enable the creation " +
+                "of reusable and scalable test cases. This significantly reduces maintenance efforts and allows for " +
+                "efficient testing of diverse applications, from GUI to mobile.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Participated in modernization efforts: ").SemiBold().Italic();
+            text.Span("Worked on the decomposition of a monolithic architecture into microservices, resulting in a " +
+                      "significant 50%+ performance improvement.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Introduced valuable features: ").SemiBold().Italic();
+            text.Span("Implemented user management and profile editing functionalities in the Cloud Portal, " +
+                      "addressing key user needs and increasing platform usability.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Prioritized stability and user experience: ").SemiBold().Italic();
+            text.Span("Proactively implemented health check mechanisms for microservices, ensuring system " +
+                      "reliability and minimizing downtime. Streamlined authentication processes with configurable " +
+                      "Auth0 token storage for improved user experience.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Established foundation for future growth: ").SemiBold().Italic();
+            text.Span("Migrated to Git and developed CI/CD pipelines, fostering efficient and " +
+                      "collaborative development environments.");
         });
     });
 }
