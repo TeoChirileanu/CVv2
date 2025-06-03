@@ -65,26 +65,67 @@ var document = Document.Create(container => {
     });
 });
 
-// document.ShowInCompanion();
-document.GeneratePdf(@"C:\CV\CV.pdf");
+document.ShowInCompanion();
+
 return;
 
 void AddHeader(RowDescriptor row) {
-    row.ConstantItem(120).Image(@"C:\CV\src\assets\ai-profile.jpg");
+    row.ConstantItem(120).Image("ai-profile.jpeg");
 
     row.RelativeItem().Column(col => {
         col.Item().Text("Abstract").Bold().FontSize(14).AlignCenter();
-        col.Item().Text("Professional programmer with 10+ years in developing software solutions").AlignCenter();
+        col.Item().Text(text => {
+            text.AlignCenter();
+            text.Span("Professional programmer").Bold();
+            text.Span(" with ");
+            text.Span("8 years").Bold();
+            text.Span(" in developing ");
+            text.Span("software solutions").Italic();
+        });
 
         col.Item().PaddingTop(10).Text("About").FontSize(14).Bold().AlignCenter();
-        col.Item().PaddingHorizontal(10).Text("An A-list developer with hands-on expertise in crypto exchanges, " +
-                                              "financial services and energy distribution. Leveraging clean code, " +
-                                              "simple design and responsible AI to improve time to market " +
-                                              "and reduce operational costs.").Justify();
+        col.Item().PaddingHorizontal(10)
+            .Text(text => {
+                text.Justify();
+                text.Span("An ");
+                text.Span("A-list developer").Italic();
+                text.Span(" with hands-on expertise in ");
+                text.Span("crypto exchanges").Italic();
+                text.Span(", ");
+                text.Span("financial services").Italic();
+                text.Span(" and ");
+                text.Span("energy trading").Italic();
+                text.Span(". Leveraging ");
+                text.Span("clean code").Bold();
+                text.Span(", ");
+                text.Span("simple design").Bold();
+                text.Span(" and ");
+                text.Span("strategic AI implementation").Italic();
+                text.Span(" to improve ");
+                text.Span("time to market").Bold();
+                text.Span(" and ");
+                text.Span("accelerate digital transformation").Bold();
+                text.Span(".");
+            });
 
         col.Item().PaddingTop(10).Text("Skills").FontSize(14).Bold().AlignCenter();
-        col.Item().Text(".NET, Azure, AWS, Blazor, Angular, Python, SQL, Docker, K8s, Redis, PS, VB, GCP")
-            .AlignCenter();
+        col.Item().Text(text => {
+            text.AlignCenter();
+            text.Span(".NET").Bold();
+            text.Span(", ");
+            text.Span("Azure").Bold();
+            text.Span(", ");
+            text.Span("Angular").Bold();
+            text.Span(", ");
+            text.Span("Blazor").Italic();
+            text.Span(", ");
+            text.Span("Python").Italic();
+            text.Span(", ");
+            text.Span("Docker").Italic();
+            text.Span(", ");
+            text.Span("Kubernetes").Italic();
+            text.Span(", Kafka, MongoDB, Redis, PowerShell, Visual Basic, Google Cloud Platform, Amazon Web Services");
+        });
 
         col.Item().PaddingTop(10).Text("Contact").FontSize(14).Bold().AlignCenter();
         col.Item().PaddingHorizontal(45).Row(r => {
@@ -159,27 +200,29 @@ void AddRecommendations(RowDescriptor row) {
                                   "positive impact he will undoubtedly have on Lykke’s projects.").Justify().Italic();
         });
         col.Item().Text("— Richard Olsen, CEO @ Lykke").AlignRight().Italic().SemiBold();
-        
+
         col.Item().PaddingTop(15).Row(r => {
             r.ConstantItem(20).Text("“")
                 .FontColor(Colors.Brown.Medium)
                 .FontSize(30);
 
-            r.RelativeItem().Text("Teodor is a passionate young man, carrying the Carpathian profundity in his heart. " +
-                                  "His interests are wide spread and go beyond his profession. As you say: passion does " +
-                                  "not spread thin - so great level of energy which he brings to each and every task he " +
-                                  "works on. Keep on going, Teo!").Justify().Italic();
+            r.RelativeItem().Text(
+                "Teodor is a passionate young man, carrying the Carpathian profundity in his heart. " +
+                "His interests are wide spread and go beyond his profession. As you say: passion does " +
+                "not spread thin - so great level of energy which he brings to each and every task he " +
+                "works on. Keep on going, Teo!").Justify().Italic();
         });
         col.Item().Text("— Wolfgang Platz, Founder @ Tricentis").AlignRight().Italic().SemiBold();
-        
+
         col.Item().PaddingTop(15).Row(r => {
             r.ConstantItem(20).Text("“")
                 .FontColor(Colors.Brown.Medium)
                 .FontSize(30);
 
-            r.RelativeItem().Text("Teo has a warm, approachable demeanor and consistently demonstrates an exceptional " +
-                                  "level of dedication to his work. He creates a supportive environment for those around " +
-                                  "him, and he’s always willing to go the extra mile to achieve success.").Justify().Italic();
+            r.RelativeItem().Text(
+                "Teo has a warm, approachable demeanor and consistently demonstrates an exceptional " +
+                "level of dedication to his work. He creates a supportive environment for those around " +
+                "him, and he’s always willing to go the extra mile to achieve success.").Justify().Italic();
         });
         col.Item().Text("— Gernot Brandl, Director of Product Management @ UIPath").AlignRight().Italic().SemiBold();
     });
