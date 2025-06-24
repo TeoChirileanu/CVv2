@@ -30,11 +30,11 @@ var document = Document.Create(container => {
                 .AlignCenter();
             col.Item().PaddingTop(10).Row(AddAmex);
 
-            col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 03/23 - 06/23").FontSize(18).Bold()
-                .AlignCenter();
-            col.Item().PaddingTop(10).Row(AddGlobalLogic);
+            // col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 03/23 - 06/23").FontSize(18).Bold()
+            //     .AlignCenter();
+            // col.Item().PaddingTop(10).Row(AddGlobalLogic);
 
-            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 02/25").FontSize(18).Bold()
+            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 06/25").FontSize(18).Bold()
                 .AlignCenter();
             col.Item().PaddingTop(10).Row(AddItineris);
 
@@ -66,15 +66,14 @@ var document = Document.Create(container => {
 });
 
 // document.ShowInCompanion();
-document.GeneratePdf(@"C:\CV\CV.pdf");
+document.GeneratePdf(@"C:\CV.pdf");
 return;
 
 void AddHeader(RowDescriptor row) {
-    row.ConstantItem(120).Image(@"C:\CV\src\assets\ai-profile.jpg");
-
+    row.ConstantItem(120).Image("ai-profile.jpeg");
     row.RelativeItem().Column(col => {
         col.Item().Text("Abstract").Bold().FontSize(14).AlignCenter();
-        col.Item().Text("Professional programmer with 10+ years in developing software solutions").AlignCenter();
+        col.Item().Text("I write code that works and looks like it was written by somebody who cares.").AlignCenter();
 
         col.Item().PaddingTop(10).Text("About").FontSize(14).Bold().AlignCenter();
         col.Item().PaddingHorizontal(10).Text("An A-list developer with hands-on expertise in crypto exchanges, " +
@@ -114,10 +113,10 @@ void AddSummary(RowDescriptor row) {
         col.Item().PaddingTop(5).Text(".NET Developer with Python and SQL @ Enedis (FR)").AlignCenter();
 
         col.Item().PaddingTop(10).Text("Other").Bold().FontSize(14).AlignCenter();
-        col.Item().PaddingTop(5).Text("Hardware Virtualization Tech Lead @ GlobalLogic (US)").AlignCenter();
+        // col.Item().PaddingTop(5).Text("Hardware Virtualization Tech Lead @ GlobalLogic (US)").AlignCenter();
         col.Item().PaddingTop(5).Text("Accounting & CRM Team Lead @ Beenear (RO)").AlignCenter();
         col.Item().PaddingTop(5).Text(".NET Developer with Angular and Azure @ Tricentis AT").AlignCenter();
-        col.Item().PaddingTop(5).Text("Certified Scratch Trainer @ Cartea Daliei (RO)").AlignCenter();
+        // col.Item().PaddingTop(5).Text("Certified Scratch Trainer @ Cartea Daliei (RO)").AlignCenter();
     });
 
     row.RelativeItem().Column(col => {
