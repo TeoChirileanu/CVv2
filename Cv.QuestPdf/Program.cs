@@ -18,6 +18,18 @@ var document = Document.Create(container => {
             col.Item().PaddingTop(10).Text("What do other say about me?").FontSize(18).Black().AlignCenter();
             col.Item().PaddingTop(10).Row(AddRecommendations);
 
+            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 08/25").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddItineris);
+            
+            col.Item().PaddingTop(10).Text(".NET Developer @ EUAA (MT) : 03/25 - 07/25").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddEuaa);
+            
+            col.Item().PaddingTop(10).Text(".NET Developer @ EPS (LT) : 02/25 - 06/25").FontSize(18).Bold()
+                .AlignCenter();
+            col.Item().PaddingTop(10).Row(AddEps);
+            
             col.Item().PaddingTop(10).Text(".NET Developer @ Lykke (CH) : 07/24 - 12/24").FontSize(18).Bold()
                 .AlignCenter();
             col.Item().PaddingTop(10).Row(AddLykke);
@@ -33,10 +45,6 @@ var document = Document.Create(container => {
             col.Item().PaddingTop(10).Text(".NET Developer @ GlobalLogic (US) : 03/23 - 06/23").FontSize(18).Bold()
                 .AlignCenter();
             col.Item().PaddingTop(10).Row(AddGlobalLogic);
-
-            col.Item().PaddingTop(10).Text(".NET Developer @ Itineris (BE) : 11/22 - 02/25").FontSize(18).Bold()
-                .AlignCenter();
-            col.Item().PaddingTop(10).Row(AddItineris);
 
             col.Item().PaddingTop(10).Text(".NET Developer @ Klips (IL) : 08/22 - 03/23").FontSize(18).Bold()
                 .AlignCenter();
@@ -79,7 +87,7 @@ void AddHeader(RowDescriptor row) {
             text.Span("Professional programmer").Bold();
             text.Span(" with ");
             text.Span("8 years").Bold();
-            text.Span(" in developing ");
+            text.Span(" of experience in developing ");
             text.Span("software solutions").Italic();
         });
 
@@ -100,7 +108,7 @@ void AddHeader(RowDescriptor row) {
                 text.Span(", ");
                 text.Span("simple design").Bold();
                 text.Span(" and ");
-                text.Span("strategic AI implementation").Italic();
+                text.Span("strategic AI usage").Italic();
                 text.Span(" to improve ");
                 text.Span("time to market").Bold();
                 text.Span(" and ");
@@ -130,10 +138,25 @@ void AddHeader(RowDescriptor row) {
         col.Item().PaddingTop(10).Text("Contact").FontSize(14).Bold().AlignCenter();
         col.Item().PaddingHorizontal(45).Row(r => {
             r.RelativeItem().Hyperlink("mailto:teodorchirileanu@gmail.com").Text("\ud83d\udce7 Email").AlignCenter();
+            // r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("\ud83d\ude80 GitHub").AlignCenter();
+            // r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("\ud83d\udcbc LinkedIn")
+            //     .AlignCenter();
+            r.RelativeItem().Hyperlink("tel:+40748333619").Text("\ud83d\udcde Phone").AlignCenter();
+        });
+        col.Item().PaddingHorizontal(45).Row(r => {
+            r.RelativeItem().Hyperlink("mailto:teodorchirileanu@gmail.com").Text("teodorchirileanu@gmail.com").AlignCenter();
+            // r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("TeoChirileanu").AlignCenter();
+            // r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("teoch").AlignCenter();
+            r.RelativeItem().Hyperlink("tel:+40748333619").Text("+40748333619").AlignCenter();
+        });
+        col.Item().PaddingHorizontal(45).Row(r => {
             r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("\ud83d\ude80 GitHub").AlignCenter();
             r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("\ud83d\udcbc LinkedIn")
                 .AlignCenter();
-            r.RelativeItem().Hyperlink("tel:+40748333619").Text("\ud83d\udcde Phone").AlignCenter();
+        });
+        col.Item().PaddingHorizontal(45).Row(r => {
+            r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("github.com/TeoChirileanu").AlignCenter();
+            r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("www.linkedin.com/in/teoch").AlignCenter();
         });
     });
 }
@@ -155,10 +178,10 @@ void AddSummary(RowDescriptor row) {
         col.Item().PaddingTop(5).Text(".NET Developer with Python and SQL @ Enedis (FR)").AlignCenter();
 
         col.Item().PaddingTop(10).Text("Other").Bold().FontSize(14).AlignCenter();
-        col.Item().PaddingTop(5).Text("Hardware Virtualization Tech Lead @ GlobalLogic (US)").AlignCenter();
-        col.Item().PaddingTop(5).Text("Accounting & CRM Team Lead @ Beenear (RO)").AlignCenter();
-        col.Item().PaddingTop(5).Text(".NET Developer with Angular and Azure @ Tricentis AT").AlignCenter();
-        col.Item().PaddingTop(5).Text("Certified Scratch Trainer @ Cartea Daliei (RO)").AlignCenter();
+        col.Item().PaddingTop(5).Text(".NET Developer with Vue and Azure @ EUAA (MT)").AlignCenter();
+        col.Item().PaddingTop(5).Text(".NET Developer with SQL and Razor @ EPS (LT)").AlignCenter();
+        col.Item().PaddingTop(5).Text(".NET Developer & Team Lead  @ Beenear (RO)").AlignCenter();
+        col.Item().PaddingTop(5).Text(".NET Developer with Angular & Azure @ Tricentis (AT)").AlignCenter();
     });
 
     row.RelativeItem().Column(col => {
@@ -225,6 +248,248 @@ void AddRecommendations(RowDescriptor row) {
                 "him, and he’s always willing to go the extra mile to achieve success.").Justify().Italic();
         });
         col.Item().Text("— Gernot Brandl, Director of Product Management @ UIPath").AlignRight().Italic().SemiBold();
+    });
+}
+
+void AddItineris(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, Bicep, Python, Sql");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Azure, D365, Jupyter");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Azure DevOps, Azure Functions, Logic Apps, Api Management, Data Lake, DataBricks");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("Itineris is a technology company specializing in cloud-based software solutions for the " +
+                      "utilities industry, particularly energy and water companies. Contributed to UMAX, their flagship" +
+                      " product, built on Microsoft Dynamics 365 and hosted in the Azure cloud streamlining processes " +
+                      "like meter-to-cash and customer engagement.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("The project spanned several energy-sector organizations focused on " +
+                      "leveraging cutting-edge technology to enhance energy management and billing systems. Flogas, a " +
+                      "leading energy supplier specializing in LPG, served a wide range of clients from residential to " +
+                      "industrial sectors. SSE, a UK-based leader in renewable energy. The projects utilized Azure Cloud " +
+                      "infrastructure to manage and process large-scale energy consumption data.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Revamped the TimeSamples System: ").SemiBold().Italic();
+            text.Span("Spearheaded the modernization of the TimeSamples system, responsible for ingesting raw meter " +
+                      "data, generating billable data, providing estimates for missing reads, and synchronizing with the " +
+                      "pricing engine for accurate tariff calculations");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Reliable Infrastructure as Code: ").SemiBold().Italic();
+            text.Span("Successfully implemented and maintained an IaC approach using Bicep, enabling consistent and " +
+                      "repeatable deployments with minimal downtime.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Optimized Data Processing: ").SemiBold().Italic();
+            text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
+                      "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Modernized Azure Infrastructure: ").SemiBold().Italic();
+            text.Span("Led the migration of Azure Functions to .NET 8 and ASEv3, improving performance, security, " +
+                      "and scalability of the platform.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Developed D365 F&O Data Entity Management Tool: ").SemiBold().Italic();
+            text.Span(
+                "Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
+        });
+    });
+}
+
+void AddEuaa(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, TypeScript, Sql");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Azure, Entity Framework, VueJS");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Azure DevOps, Visual Studio");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("EUAA is a European Union agency that plays a crucial role in implementing the EU's common " +
+                      "asylum system. It provides operational and technical assistance to EU Member States, ensuring " +
+                      "consistent asylum procedures across Europe. The agency delivers training, quality support, and " +
+                      "data analysis to strengthen the EU's capacity to protect those seeking international protection.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("The project utilized a Vue.js frontend to provide an administrative interface where users " +
+                      "could manage expert assignments to deployment and operational plans. The system allowed " +
+                      "administrators to assign countries, track expert availability, and manage various operational " +
+                      "aspects through a modern, responsive interface. Backend services were built with .NET Core, " +
+                      "providing RESTful APIs.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Enhanced Resource Planning with Real-Time Analytics: ").SemiBold().Italic();
+            text.Span("Developed an interactive dashboard for deployment plans that provides instant visibility " +
+                     "into expert allocation patterns. This feature automatically aggregates and displays monthly " +
+                     "summaries of expert types and quantities");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Rights Management System Redesign: ").SemiBold().Italic();
+            text.Span("Contributed to a backend redesign " +
+                      "of the rights management system using custom authorization attributes on controllers and " +
+                      "middleware-level permission checks. Implemented frontend route guards " +
+                      "based on user roles and permissions, leading to better page " +
+                      "accessibility and security.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Implemented Cascades Functionality: ").SemiBold().Italic();
+            text.Span("Developed a comprehensive table and dialog system for linking expert profiles with tasks, " +
+                      "significantly reducing manual data entry time and improving data consistency across the system.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Optimized API Performance: ").SemiBold().Italic();
+            text.Span("Dramatically improved task fetching performance by optimizing SQL entity relationships " +
+                      "at the application level, reducing response time from 600 to 30 seconds.");
+        });
+    });
+}
+
+void AddEps(RowDescriptor row) {
+    row.Spacing(10);
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Languages: ").Italic();
+            text.Span("C#, TypeScript, Sql");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Frameworks: ").Italic();
+            text.Span(".NET, ASP.NET, Azure, Entity Framework, VueJS");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.AlignCenter();
+            text.Span("Tools: ").Italic();
+            text.Span("Rider, Azure DevOps, Visual Studio");
+        });
+
+        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Business: ").Italic();
+            text.Span("EUAA is a European Union agency that plays a crucial role in implementing the EU's common " +
+                      "asylum system. It provides operational and technical assistance to EU Member States, ensuring " +
+                      "consistent asylum procedures across Europe. The agency delivers training, quality support, and " +
+                      "data analysis to strengthen the EU's capacity to protect those seeking international protection.");
+        });
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Technical: ").Italic();
+            text.Span("The project spanned several energy-sector organizations focused on " +
+                      "leveraging cutting-edge technology to enhance energy management and billing systems. Flogas, a " +
+                      "leading energy supplier specializing in LPG, served a wide range of clients from residential to " +
+                      "industrial sectors. SSE, a UK-based leader in renewable energy. The projects utilized Azure Cloud " +
+                      "infrastructure to manage and process large-scale energy consumption data.");
+        });
+    });
+
+    row.RelativeItem().Column(col => {
+        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Revamped the TimeSamples System: ").SemiBold().Italic();
+            text.Span("Spearheaded the modernization of the TimeSamples system, responsible for ingesting raw meter " +
+                      "data, generating billable data, providing estimates for missing reads, and synchronizing with the " +
+                      "pricing engine for accurate tariff calculations");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Reliable Infrastructure as Code: ").SemiBold().Italic();
+            text.Span("Successfully implemented and maintained an IaC approach using Bicep, enabling consistent and " +
+                      "repeatable deployments with minimal downtime.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Optimized Data Processing: ").SemiBold().Italic();
+            text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
+                      "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Modernized Azure Infrastructure: ").SemiBold().Italic();
+            text.Span("Led the migration of Azure Functions to .NET 8 and ASEv3, improving performance, security, " +
+                      "and scalability of the platform.");
+        });
+
+        col.Item().PaddingTop(5).Text(text => {
+            text.Justify();
+            text.Span("Developed D365 F&O Data Entity Management Tool: ").SemiBold().Italic();
+            text.Span(
+                "Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
+        });
     });
 }
 
@@ -538,88 +803,6 @@ void AddGlobalLogic(RowDescriptor row) {
             text.Span("Provided regular updates and presentations to the US client: ").SemiBold().Italic();
             text.Span("Maintained open communication with stakeholders, demonstrating project progress, achieved " +
                       "milestones, and addressing any concerns.");
-        });
-    });
-}
-
-void AddItineris(RowDescriptor row) {
-    row.Spacing(10);
-
-    row.RelativeItem().Column(col => {
-        col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
-        col.Item().PaddingTop(5).Text(text => {
-            text.AlignCenter();
-            text.Span("Languages: ").Italic();
-            text.Span("C#, Bicep, Python, Sql");
-        });
-        col.Item().PaddingTop(5).Text(text => {
-            text.AlignCenter();
-            text.Span("Frameworks: ").Italic();
-            text.Span(".NET, ASP.NET, Azure, D365, Jupyter");
-        });
-        col.Item().PaddingTop(5).Text(text => {
-            text.AlignCenter();
-            text.Span("Tools: ").Italic();
-            text.Span("Rider, Azure DevOps, Azure Functions, Logic Apps, Api Management, Data Lake, DataBricks");
-        });
-
-        col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Business: ").Italic();
-            text.Span("Itineris is a technology company specializing in cloud-based software solutions for the " +
-                      "utilities industry, particularly energy and water companies. Contributed to UMAX, their flagship" +
-                      " product, built on Microsoft Dynamics 365 and hosted in the Azure cloud streamlining processes " +
-                      "like meter-to-cash and customer engagement.");
-        });
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Technical: ").Italic();
-            text.Span("The project spanned several energy-sector organizations focused on " +
-                      "leveraging cutting-edge technology to enhance energy management and billing systems. Flogas, a " +
-                      "leading energy supplier specializing in LPG, served a wide range of clients from residential to " +
-                      "industrial sectors. SSE, a UK-based leader in renewable energy. The projects utilized Azure Cloud " +
-                      "infrastructure to manage and process large-scale energy consumption data.");
-        });
-    });
-
-    row.RelativeItem().Column(col => {
-        col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Revamped the TimeSamples System: ").SemiBold().Italic();
-            text.Span("Spearheaded the modernization of the TimeSamples system, responsible for ingesting raw meter " +
-                      "data, generating billable data, providing estimates for missing reads, and synchronizing with the " +
-                      "pricing engine for accurate tariff calculations");
-        });
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Reliable Infrastructure as Code: ").SemiBold().Italic();
-            text.Span("Successfully implemented and maintained an IaC approach using Bicep, enabling consistent and " +
-                      "repeatable deployments with minimal downtime.");
-        });
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Optimized Data Processing: ").SemiBold().Italic();
-            text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
-                      "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
-        });
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Modernized Azure Infrastructure: ").SemiBold().Italic();
-            text.Span("Led the migration of Azure Functions to .NET 8 and ASEv3, improving performance, security, " +
-                      "and scalability of the platform.");
-        });
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Developed D365 F&O Data Entity Management Tool: ").SemiBold().Italic();
-            text.Span(
-                "Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
         });
     });
 }
