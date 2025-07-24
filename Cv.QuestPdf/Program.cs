@@ -73,6 +73,7 @@ var document = Document.Create(container => {
     });
 });
 
+document.GeneratePdf(@"C:\cv.pdf");
 document.ShowInCompanion();
 
 return;
@@ -138,15 +139,10 @@ void AddHeader(RowDescriptor row) {
         col.Item().PaddingTop(10).Text("Contact").FontSize(14).Bold().AlignCenter();
         col.Item().PaddingHorizontal(45).Row(r => {
             r.RelativeItem().Hyperlink("mailto:teodorchirileanu@gmail.com").Text("\ud83d\udce7 Email").AlignCenter();
-            // r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("\ud83d\ude80 GitHub").AlignCenter();
-            // r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("\ud83d\udcbc LinkedIn")
-            //     .AlignCenter();
             r.RelativeItem().Hyperlink("tel:+40748333619").Text("\ud83d\udcde Phone").AlignCenter();
         });
         col.Item().PaddingHorizontal(45).Row(r => {
             r.RelativeItem().Hyperlink("mailto:teodorchirileanu@gmail.com").Text("teodorchirileanu@gmail.com").AlignCenter();
-            // r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("TeoChirileanu").AlignCenter();
-            // r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("teoch").AlignCenter();
             r.RelativeItem().Hyperlink("tel:+40748333619").Text("+40748333619").AlignCenter();
         });
         col.Item().PaddingHorizontal(45).Row(r => {
@@ -155,7 +151,7 @@ void AddHeader(RowDescriptor row) {
                 .AlignCenter();
         });
         col.Item().PaddingHorizontal(45).Row(r => {
-            r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("github.com/TeoChirileanu").AlignCenter();
+            r.RelativeItem().Hyperlink("https://github.com/TeoChirileanu").Text("www.github.com/TeoChirileanu").AlignCenter();
             r.RelativeItem().Hyperlink("https://www.linkedin.com/in/teoch/").Text("www.linkedin.com/in/teoch").AlignCenter();
         });
     });
@@ -419,36 +415,35 @@ void AddEps(RowDescriptor row) {
         col.Item().PaddingTop(5).Text(text => {
             text.AlignCenter();
             text.Span("Languages: ").Italic();
-            text.Span("C#, TypeScript, Sql");
+            text.Span("C#, SQL, Razor");
         });
         col.Item().PaddingTop(5).Text(text => {
             text.AlignCenter();
             text.Span("Frameworks: ").Italic();
-            text.Span(".NET, ASP.NET, Azure, Entity Framework, VueJS");
+            text.Span(".NET, ASP.NET, tSQLt");
         });
         col.Item().PaddingTop(5).Text(text => {
             text.AlignCenter();
             text.Span("Tools: ").Italic();
-            text.Span("Rider, Azure DevOps, Visual Studio");
+            text.Span("Rider, GitLab, TeamCity, Octopus, SoapUI");
         });
 
         col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Business: ").Italic();
-            text.Span("EUAA is a European Union agency that plays a crucial role in implementing the EU's common " +
-                      "asylum system. It provides operational and technical assistance to EU Member States, ensuring " +
-                      "consistent asylum procedures across Europe. The agency delivers training, quality support, and " +
-                      "data analysis to strengthen the EU's capacity to protect those seeking international protection.");
+            text.Span("EPS LT is a leading payments solution provider based in Lithuania, serving major clients " +
+                      "across the Baltics, Central and Eastern Europe. The company specializes in developing and " +
+                      "maintaining robust card-based infrastructure for fleet, insurance, and gift card management, " +
+                      "as well as custom corporate payment and loyalty solutions");
         });
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
             text.Span("Technical: ").Italic();
-            text.Span("The project spanned several energy-sector organizations focused on " +
-                      "leveraging cutting-edge technology to enhance energy management and billing systems. Flogas, a " +
-                      "leading energy supplier specializing in LPG, served a wide range of clients from residential to " +
-                      "industrial sectors. SSE, a UK-based leader in renewable energy. The projects utilized Azure Cloud " +
-                      "infrastructure to manage and process large-scale energy consumption data.");
+            text.Span("Worked on FIG (Fleet, Insurance, Gift Cards), a comprehensive platform where each client " +
+                      "had its own suite of solutions including databases, admin web interface, client web portal, " +
+                      "and backend services. The role involved providing support and developing new features across " +
+                      "the entire technology stack, ensuring seamless integration and optimal performance of all components.");
         });
     });
 
@@ -457,38 +452,31 @@ void AddEps(RowDescriptor row) {
 
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
-            text.Span("Revamped the TimeSamples System: ").SemiBold().Italic();
-            text.Span("Spearheaded the modernization of the TimeSamples system, responsible for ingesting raw meter " +
-                      "data, generating billable data, providing estimates for missing reads, and synchronizing with the " +
-                      "pricing engine for accurate tariff calculations");
+            text.Span("Implemented Dynamic Insurance Discount System: ").SemiBold().Italic();
+            text.Span("Developed a comprehensive health insurance discount system for pharmacies, enabling " +
+                      "automated application of gratuities and reductions based on product categories and insurance policies.");
         });
 
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
-            text.Span("Reliable Infrastructure as Code: ").SemiBold().Italic();
-            text.Span("Successfully implemented and maintained an IaC approach using Bicep, enabling consistent and " +
-                      "repeatable deployments with minimal downtime.");
+            text.Span("Implemented ATC Code Import System: ").SemiBold().Italic();
+            text.Span("Designed and built a system to import both real and test ATC codes, providing pharmacies an " +
+                      "internal tool to flexibly assign reduction codes to products based on standardized templates.");
         });
 
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
-            text.Span("Optimized Data Processing: ").SemiBold().Italic();
-            text.Span("Significantly improved the performance and scalability of Databricks jobs handling large " +
-                      "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
+            text.Span("Optimized Database Performance: ").SemiBold().Italic();
+            text.Span("Implemented a SQL cleanup procedure that removed expired card limits from production, " +
+                      "reducing maintenance costs and providing clearer insights into client usage patterns and trends.");
         });
 
         col.Item().PaddingTop(5).Text(text => {
             text.Justify();
-            text.Span("Modernized Azure Infrastructure: ").SemiBold().Italic();
-            text.Span("Led the migration of Azure Functions to .NET 8 and ASEv3, improving performance, security, " +
-                      "and scalability of the platform.");
-        });
-
-        col.Item().PaddingTop(5).Text(text => {
-            text.Justify();
-            text.Span("Developed D365 F&O Data Entity Management Tool: ").SemiBold().Italic();
-            text.Span(
-                "Built a custom .NET application to manage Data Entities within Dynamics 365 Finance & Operations.");
+            text.Span("Re-architected Database System: ").SemiBold().Italic();
+            text.Span("Successfully consolidated multiple client databases into a single source of truth, " +
+                      "reducing operational costs and complexity while moving business logic from stored procedures " +
+                      "into maintainable C# code.");
         });
     });
 }
