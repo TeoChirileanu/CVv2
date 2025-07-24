@@ -1,4 +1,0 @@
-﻿1) de corectat integral
-2) de adaugat experientele eps si euaa
-3) de facut profiluri separate: backend, fullstack, cloud
-4) pt fiecare jd de facut un cv separat

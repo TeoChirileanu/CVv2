@@ -1,5 +1,4 @@
-﻿using QuestPDF.Companion;
-using QuestPDF.Fluent;
+﻿using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
@@ -73,8 +72,8 @@ var document = Document.Create(container => {
     });
 });
 
-document.GeneratePdf(@"C:\cv.pdf");
-document.ShowInCompanion();
+document.GeneratePdf(@"..\..\..\..\cv.pdf");
+// document.ShowInCompanion();
 
 return;
 
