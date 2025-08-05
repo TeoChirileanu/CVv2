@@ -18,4 +18,10 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\cv.pdf">
+        <Link>cv.pdf</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>

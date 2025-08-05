@@ -1,0 +1,5 @@
+﻿1) actualizat linkedin cover cu sigla tuturor clientilor
+2) trimit full profile
+3) cand primesc un jd 40+, tailor profile & send
+4) facut profil gun.io si proxify
+5) de luat din linkedin istoric cu 40+ si trimis email
