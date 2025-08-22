@@ -13,6 +13,10 @@ public class TemplateProfile {
         columnDescriptor.Item().PaddingTop(10).Text("What do other say about me?").FontSize(18).Black().AlignCenter();
         columnDescriptor.Item().PaddingTop(10).Row(AddRecommendations);
 
+        columnDescriptor.Item().PaddingTop(10).Text("Backend Developer @ CFP Energy (UK) : 03/25 - 08/25").FontSize(18).Bold()
+            .AlignCenter();
+        columnDescriptor.Item().PaddingTop(10).Row(AddCfpEnergy);
+        
         columnDescriptor.Item().PaddingTop(10).Text("Backend Developer @ Itineris (Belgium) : 11/22 - 08/25").FontSize(18)
             .Bold()
             .AlignCenter();
@@ -155,41 +159,41 @@ public class TemplateProfile {
     void AddSummary(RowDescriptor row) {
         row.RelativeItem().Column(col => {
             col.Item().Text("Crypto Exchanges").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Python and AWS @ Lykke (CH)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with JavaScript and GCP @ Klips (IL)").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Lykke").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Klips").AlignCenter();
 
             col.Item().PaddingTop(10).Text("Financial Services").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with VB and Azure @ ING Bank (RO)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Blazor and Azure @ Amex (US)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Angular and Azure @ Axa IM (FR)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with SQL and PS @ SG CIB (FR)").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ ING Bank").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Amex").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Axa IM").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ SG CIB").AlignCenter();
 
-            col.Item().PaddingTop(10).Text("Energy Distribution").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Bicep and Azure @ Itineris (BE)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Python and SQL @ Enedis (FR)").AlignCenter();
+            col.Item().PaddingTop(10).Text("Energy Distribution & Trading").Bold().FontSize(14).AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ CFP Energy").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Itineris").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Enedis").AlignCenter();
 
             col.Item().PaddingTop(10).Text("Other").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Vue and Azure @ EUAA (MT)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with SQL and Razor @ EPS (LT)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer & Team Lead  @ Beenear (RO)").AlignCenter();
-            col.Item().PaddingTop(5).Text(".NET Developer with Angular & Azure @ Tricentis (AT)").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ EUAA").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ EPS").AlignCenter();
+            col.Item().PaddingTop(5).Text(".NET Developer @ Tricentis").AlignCenter();
         });
 
         row.RelativeItem().Column(col => {
             col.Item().Text("Certifications").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text("Microsoft Certified: DevOps Engineer Expert").AlignCenter();
-            col.Item().PaddingTop(5).Text("AWS Certified: DevOps Engineer Professional").AlignCenter();
-            col.Item().PaddingTop(5).Text("Google Cloud Certification: Professional Developer").AlignCenter();
-            col.Item().PaddingTop(5).Text("Blockchain Council: Certified Fintech Expert").AlignCenter();
+            col.Item().PaddingTop(5).Text("Microsoft DevOps Engineer Expert").AlignCenter();
+            col.Item().PaddingTop(5).Text("AWS DevOps Engineer Professional").AlignCenter();
+            col.Item().PaddingTop(5).Text("Google Cloud Professional Developer").AlignCenter();
+            col.Item().PaddingTop(5).Text("Blockchain Certified Fintech Expert").AlignCenter();
 
             col.Item().PaddingTop(10).Text("Courses").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text("Uncle Bob: Architecture & Design Masters Class").AlignCenter();
-            col.Item().PaddingTop(5).Text("Uncle Bob: TDD, Clean Code & Refactoring").AlignCenter();
-            col.Item().PaddingTop(5).Text("Scrum Alliance: Professional Scrum Developer").AlignCenter();
+            col.Item().PaddingTop(5).Text("Architecture & Design Masters Class by Uncle Bob").AlignCenter();
+            col.Item().PaddingTop(5).Text("Professional Scrum Developer by Scrum Alliance").AlignCenter();
+            col.Item().PaddingTop(5).Text("TDD, Clean Code & Refactoring by Uncle Bob").AlignCenter();
 
             col.Item().PaddingTop(10).Text("Education").Bold().FontSize(14).AlignCenter();
-            col.Item().PaddingTop(5).Text("UAIC: Bachelor of Computer Science").AlignCenter();
-            col.Item().PaddingTop(5).Text("CNME: French Baccalaureate Diploma").AlignCenter();
+            col.Item().PaddingTop(5).Text("Bachelor of Computer Science").AlignCenter();
+            col.Item().PaddingTop(5).Text("French Baccalaureate Diploma").AlignCenter();
 
             col.Item().PaddingTop(10).Text("Favorite Books").Bold().FontSize(14).AlignCenter();
             col.Item().PaddingTop(5).Text("C# in Depth, Extreme Programming Explained, " +
@@ -244,6 +248,91 @@ public class TemplateProfile {
         });
     }
 
+    void AddCfpEnergy(RowDescriptor row) {
+        row.Spacing(10);
+
+        row.RelativeItem().Column(col => {
+            col.Item().PaddingTop(5).Text("Technical Environment").Bold().FontSize(14).AlignCenter();
+            col.Item().PaddingTop(5).Text(text => {
+                text.AlignCenter();
+                text.Span("Languages: ").Italic();
+                text.Span("C#, SQL, Mermaid");
+            });
+            col.Item().PaddingTop(5).Text(text => {
+                text.AlignCenter();
+                text.Span("Frameworks: ").Italic();
+                text.Span(".NET, Azure, Kafka, Entity Framework, PostgreSQL, SignalR");
+            });
+            col.Item().PaddingTop(5).Text(text => {
+                text.AlignCenter();
+                text.Span("Tools: ").Italic();
+                text.Span("Rider, Postman, Miro, GitHub, Molecule, Aspire, TDD, Azure, Refit, Polly");
+            });
+
+            col.Item().PaddingTop(5).Text("Project Description").Bold().FontSize(14).AlignCenter();
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Business: ").Italic();
+                text.Span(
+                    "CFP Energy is a leading energy trading company in the UK, specializing in wholesale electricity " +
+                    "and gas trading, risk management, and market analysis. The company focuses on optimizing energy portfolios " +
+                    "through advanced data analytics and real-time market monitoring systems. Their platform enables efficient " +
+                    "trading operations while ensuring compliance with regulatory requirements and market standards.");
+            });
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Technical: ").Italic();
+                text.Span("Led the backend development of Mercury, a greenfield application designed to streamline " +
+                    "trading of carbon instruments. The solution utilized .NET microservices communicating through Kafka " +
+                    "topics, real-time frontend updates via SignalR, PostgreSQL for persistent storage, and integration " +
+                    "with Molecule API for trade settlement.");
+            });
+        });
+
+        row.RelativeItem().Column(col => {
+            col.Item().PaddingTop(5).Text("Key Achievements").Bold().FontSize(14).AlignCenter();
+
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Designed and Implemented Ring-Fenced Architecture: ").SemiBold().Italic();
+                text.Span(
+                    "Led the architecture design for automated ring-fencing of carbon trades, leveraging clean " +
+                    "architecture principles and expressing complex requirements through Mermaid diagrams.");
+            });
+
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Implemented Molecule API Integration: ").SemiBold().Italic();
+                text.Span(
+                    "Created the Molecule API client and adaptor, enabling end-to-end workflows for new trades along " +
+                    "with fees and commissions, while ensuring simplicity and resilience.");
+            });
+
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Micro Frontend Development: ").SemiBold().Italic();
+                text.Span(
+                    "Developed micro frontends for the backend services, leveraging modern web technologies to achieve ease of testing and faster delivery.");
+            });
+
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Real-Time Trade Event Notifications: ").SemiBold().Italic();
+                text.Span(
+                    "Implemented real-time communication with the Angular frontend via SignalR/WebSockets, " +
+                    "informing end users about trade events as soon as possible.");
+            });
+
+            col.Item().PaddingTop(5).Text(text => {
+                text.Justify();
+                text.Span("Advanced Microservices Communication: ").SemiBold().Italic();
+                text.Span(
+                    "Optimized inter-service communication by implementing Kafka topics with Avro serialization, " +
+                    "achieving high performance and efficient data transfer between microservices.");
+            });
+        });
+    }
+    
     void AddItineris(RowDescriptor row) {
         row.Spacing(10);
 
@@ -804,8 +893,8 @@ public class TemplateProfile {
                 text.Justify();
                 text.Span("Sub-Millisecond Communication Architecture: ").SemiBold().Italic();
                 text.Span(
-                    "Significantly improved the performance and scalability of Databricks jobs handling large " +
-                    "volumes of metering data, enhancing the ability to process and analyze customer usage data efficiently.");
+                    "Implemented microservice communication using Kafka topics with Avro serialization, " +
+                    "achieving sub-millisecond latency and ensuring data consistency across the system.");
             });
 
             col.Item().PaddingTop(5).Text(text => {

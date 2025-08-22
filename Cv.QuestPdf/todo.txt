@@ -1,5 +1,5 @@
-﻿1) actualizat linkedin cover cu sigla tuturor clientilor
-2) trimit full profile
+﻿1) actualizat linkedin cover cu sigla de la modu
+2) networking cu modu
 3) cand primesc un jd 40+, tailor profile & send
 4) facut profil gun.io si proxify
-5) de luat din linkedin istoric cu 40+ si trimis email
+5) de luat din linkedin istoric cu 40+ si raspuns la mesaj
